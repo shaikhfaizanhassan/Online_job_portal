@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Job_DatabaseModelStoreContainer" CdmEntityContainer="Job_DatabaseEntities">
+    <EntitySetMapping Name="admin_tb">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.admin_tb">
+        <MappingFragment StoreEntitySet="admin_tb">
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplyJob_tb">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.ApplyJob_tb">
+        <MappingFragment StoreEntitySet="ApplyJob_tb">
+          <ScalarProperty Name="AJ_ID" ColumnName="AJ_ID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+          <ScalarProperty Name="Job_seekerID" ColumnName="Job_seekerID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company_tb">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.Company_tb">
+        <MappingFragment StoreEntitySet="Company_tb">
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="CNAME" ColumnName="CNAME" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Education_tb">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.Education_tb">
+        <MappingFragment StoreEntitySet="Education_tb">
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="Job_seeker_ID" ColumnName="Job_seeker_ID" />
+          <ScalarProperty Name="CollageName" ColumnName="CollageName" />
+          <ScalarProperty Name="Enrollment_Number" ColumnName="Enrollment_Number" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Passyear" ColumnName="Passyear" />
+          <ScalarProperty Name="CPI" ColumnName="CPI" />
+          <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+          <ScalarProperty Name="Skill" ColumnName="Skill" />
+          <ScalarProperty Name="ExtraSkill" ColumnName="ExtraSkill" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inbox_tb">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.inbox_tb">
+        <MappingFragment StoreEntitySet="inbox_tb">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Names" ColumnName="Names" />
+          <ScalarProperty Name="Froms" ColumnName="Froms" />
+          <ScalarProperty Name="Tos" ColumnName="Tos" />
+          <ScalarProperty Name="Messages" ColumnName="Messages" />
+          <ScalarProperty Name="Statuss" ColumnName="Statuss" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="job_categorytb">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.job_categorytb">
+        <MappingFragment StoreEntitySet="job_categorytb">
+          <ScalarProperty Name="job_cat_id" ColumnName="job_cat_id" />
+          <ScalarProperty Name="job_cat_name" ColumnName="job_cat_name" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Job_location">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.Job_location">
+        <MappingFragment StoreEntitySet="Job_location">
+          <ScalarProperty Name="JobLocation_ID" ColumnName="JobLocation_ID" />
+          <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jobseeker_tb">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.jobseeker_tb">
+        <MappingFragment StoreEntitySet="jobseeker_tb">
+          <ScalarProperty Name="JS_ID" ColumnName="JS_ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostJob_tb">
+      <EntityTypeMapping TypeName="Job_DatabaseModel.PostJob_tb">
+        <MappingFragment StoreEntitySet="PostJob_tb">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+          <ScalarProperty Name="job_cat_id" ColumnName="job_cat_id" />
+          <ScalarProperty Name="RequiredSkill" ColumnName="RequiredSkill" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Min_Qualification" ColumnName="Min_Qualification" />
+          <ScalarProperty Name="ExtraSkill" ColumnName="ExtraSkill" />
+          <ScalarProperty Name="Max_age" ColumnName="Max_age" />
+          <ScalarProperty Name="Expected_salary" ColumnName="Expected_salary" />
+          <ScalarProperty Name="Job_location" ColumnName="Job_location" />
+          <ScalarProperty Name="Working_Hour" ColumnName="Working_Hour" />
+          <ScalarProperty Name="Job_Desc" ColumnName="Job_Desc" />
+          <ScalarProperty Name="LastApplyDate" ColumnName="LastApplyDate" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Job_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin_tb">
+          <Key>
+            <PropertyRef Name="Admin_ID" />
+          </Key>
+          <Property Name="Admin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="60" />
+          <Property Name="Email" Type="nvarchar" MaxLength="60" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="60" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="60" />
+          <Property Name="Password" Type="nvarchar" MaxLength="60" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ApplyJob_tb">
+          <Key>
+            <PropertyRef Name="AJ_ID" />
+          </Key>
+          <Property Name="AJ_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobID" Type="int" />
+          <Property Name="Company_ID" Type="int" />
+          <Property Name="Job_seekerID" Type="int" />
+          <Property Name="Status" Type="nvarchar" MaxLength="60" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Company_tb">
+          <Key>
+            <PropertyRef Name="CID" />
+          </Key>
+          <Property Name="CID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CNAME" Type="nvarchar" MaxLength="60" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar" MaxLength="60" />
+          <Property Name="State" Type="nvarchar" MaxLength="60" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="60" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="60" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="60" />
+          <Property Name="Email" Type="nvarchar" MaxLength="60" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="60" />
+          <Property Name="Password" Type="nvarchar" MaxLength="60" />
+          <Property Name="Website" Type="nvarchar" MaxLength="60" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Education_tb">
+          <Key>
+            <PropertyRef Name="EID" />
+          </Key>
+          <Property Name="EID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Job_seeker_ID" Type="int" />
+          <Property Name="CollageName" Type="nvarchar" MaxLength="60" />
+          <Property Name="Enrollment_Number" Type="nvarchar" MaxLength="60" />
+          <Property Name="Semester" Type="nvarchar" MaxLength="60" />
+          <Property Name="Education" Type="nvarchar" MaxLength="60" />
+          <Property Name="Branch" Type="nvarchar" MaxLength="60" />
+          <Property Name="Passyear" Type="nvarchar" MaxLength="60" />
+          <Property Name="CPI" Type="nvarchar" MaxLength="60" />
+          <Property Name="CGPA" Type="nvarchar" MaxLength="60" />
+          <Property Name="Skill" Type="nvarchar" MaxLength="60" />
+          <Property Name="ExtraSkill" Type="nvarchar" MaxLength="60" />
+          <Property Name="Resume" Type="nvarchar" MaxLength="100" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="inbox_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Names" Type="nvarchar" MaxLength="60" />
+          <Property Name="Froms" Type="nvarchar" MaxLength="60" />
+          <Property Name="Tos" Type="nvarchar" MaxLength="60" />
+          <Property Name="Messages" Type="nvarchar(max)" />
+          <Property Name="Statuss" Type="nvarchar" MaxLength="60" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="job_categorytb">
+          <Key>
+            <PropertyRef Name="job_cat_id" />
+          </Key>
+          <Property Name="job_cat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="job_cat_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="entry_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Job_location">
+          <Key>
+            <PropertyRef Name="JobLocation_ID" />
+          </Key>
+          <Property Name="JobLocation_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="jobseeker_tb">
+          <Key>
+            <PropertyRef Name="JS_ID" />
+          </Key>
+          <Property Name="JS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="60" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="60" />
+          <Property Name="Address" Type="nvarchar" MaxLength="60" />
+          <Property Name="City" Type="nvarchar" MaxLength="60" />
+          <Property Name="State" Type="nvarchar" MaxLength="60" />
+          <Property Name="DateOfBirth" Type="nvarchar" MaxLength="60" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="60" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="60" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="60" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="60" />
+          <Property Name="Password" Type="nvarchar" MaxLength="60" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PostJob_tb">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company_ID" Type="int" />
+          <Property Name="job_cat_id" Type="int" />
+          <Property Name="RequiredSkill" Type="nvarchar" MaxLength="60" />
+          <Property Name="Role" Type="nvarchar" MaxLength="60" />
+          <Property Name="Min_Qualification" Type="nvarchar" MaxLength="60" />
+          <Property Name="ExtraSkill" Type="nvarchar" MaxLength="60" />
+          <Property Name="Max_age" Type="nvarchar" MaxLength="60" />
+          <Property Name="Expected_salary" Type="int" />
+          <Property Name="Job_location" Type="int" />
+          <Property Name="Working_Hour" Type="nvarchar" MaxLength="60" />
+          <Property Name="Job_Desc" Type="nvarchar" MaxLength="60" />
+          <Property Name="LastApplyDate" Type="datetime" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__ApplyJob___Compa__35BCFE0A">
+          <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
+          <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company_tb">
+              <PropertyRef Name="CID" />
+            </Principal>
+            <Dependent Role="ApplyJob_tb">
+              <PropertyRef Name="Company_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ApplyJob___Job_s__36B12243">
+          <End Role="jobseeker_tb" Type="Self.jobseeker_tb" Multiplicity="0..1" />
+          <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobseeker_tb">
+              <PropertyRef Name="JS_ID" />
+            </Principal>
+            <Dependent Role="ApplyJob_tb">
+              <PropertyRef Name="Job_seekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ApplyJob___JobID__34C8D9D1">
+          <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="0..1" />
+          <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostJob_tb">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="ApplyJob_tb">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Education__Job_s__276EDEB3">
+          <End Role="jobseeker_tb" Type="Self.jobseeker_tb" Multiplicity="0..1" />
+          <End Role="Education_tb" Type="Self.Education_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobseeker_tb">
+              <PropertyRef Name="JS_ID" />
+            </Principal>
+            <Dependent Role="Education_tb">
+              <PropertyRef Name="Job_seeker_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PostJob_t__Compa__300424B4">
+          <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
+          <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company_tb">
+              <PropertyRef Name="CID" />
+            </Principal>
+            <Dependent Role="PostJob_tb">
+              <PropertyRef Name="Company_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PostJob_t__job_c__30F848ED">
+          <End Role="job_categorytb" Type="Self.job_categorytb" Multiplicity="0..1" />
+          <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_categorytb">
+              <PropertyRef Name="job_cat_id" />
+            </Principal>
+            <Dependent Role="PostJob_tb">
+              <PropertyRef Name="job_cat_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PostJob_t__Job_l__31EC6D26">
+          <End Role="Job_location" Type="Self.Job_location" Multiplicity="0..1" />
+          <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_location">
+              <PropertyRef Name="JobLocation_ID" />
+            </Principal>
+            <Dependent Role="PostJob_tb">
+              <PropertyRef Name="Job_location" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Job_DatabaseModelStoreContainer">
+          <EntitySet Name="admin_tb" EntityType="Self.admin_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApplyJob_tb" EntityType="Self.ApplyJob_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company_tb" EntityType="Self.Company_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Education_tb" EntityType="Self.Education_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inbox_tb" EntityType="Self.inbox_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="job_categorytb" EntityType="Self.job_categorytb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job_location" EntityType="Self.Job_location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jobseeker_tb" EntityType="Self.jobseeker_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostJob_tb" EntityType="Self.PostJob_tb" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ApplyJob___Compa__35BCFE0A" Association="Self.FK__ApplyJob___Compa__35BCFE0A">
+            <End Role="Company_tb" EntitySet="Company_tb" />
+            <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ApplyJob___Job_s__36B12243" Association="Self.FK__ApplyJob___Job_s__36B12243">
+            <End Role="jobseeker_tb" EntitySet="jobseeker_tb" />
+            <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ApplyJob___JobID__34C8D9D1" Association="Self.FK__ApplyJob___JobID__34C8D9D1">
+            <End Role="PostJob_tb" EntitySet="PostJob_tb" />
+            <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Education__Job_s__276EDEB3" Association="Self.FK__Education__Job_s__276EDEB3">
+            <End Role="jobseeker_tb" EntitySet="jobseeker_tb" />
+            <End Role="Education_tb" EntitySet="Education_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PostJob_t__Compa__300424B4" Association="Self.FK__PostJob_t__Compa__300424B4">
+            <End Role="Company_tb" EntitySet="Company_tb" />
+            <End Role="PostJob_tb" EntitySet="PostJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PostJob_t__job_c__30F848ED" Association="Self.FK__PostJob_t__job_c__30F848ED">
+            <End Role="job_categorytb" EntitySet="job_categorytb" />
+            <End Role="PostJob_tb" EntitySet="PostJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PostJob_t__Job_l__31EC6D26" Association="Self.FK__PostJob_t__Job_l__31EC6D26">
+            <End Role="Job_location" EntitySet="Job_location" />
+            <End Role="PostJob_tb" EntitySet="PostJob_tb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Job_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin_tb">
+          <Key>
+            <PropertyRef Name="Admin_ID" />
+          </Key>
+          <Property Name="Admin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ApplyJob_tb">
+          <Key>
+            <PropertyRef Name="AJ_ID" />
+          </Key>
+          <Property Name="AJ_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobID" Type="Int32" />
+          <Property Name="Company_ID" Type="Int32" />
+          <Property Name="Job_seekerID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Company_tb" Relationship="Self.FK__ApplyJob___Compa__35BCFE0A" FromRole="ApplyJob_tb" ToRole="Company_tb" />
+          <NavigationProperty Name="jobseeker_tb" Relationship="Self.FK__ApplyJob___Job_s__36B12243" FromRole="ApplyJob_tb" ToRole="jobseeker_tb" />
+          <NavigationProperty Name="PostJob_tb" Relationship="Self.FK__ApplyJob___JobID__34C8D9D1" FromRole="ApplyJob_tb" ToRole="PostJob_tb" />
+        </EntityType>
+        <EntityType Name="Company_tb">
+          <Key>
+            <PropertyRef Name="CID" />
+          </Key>
+          <Property Name="CID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CNAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ApplyJob_tb" Relationship="Self.FK__ApplyJob___Compa__35BCFE0A" FromRole="Company_tb" ToRole="ApplyJob_tb" />
+          <NavigationProperty Name="PostJob_tb" Relationship="Self.FK__PostJob_t__Compa__300424B4" FromRole="Company_tb" ToRole="PostJob_tb" />
+        </EntityType>
+        <EntityType Name="Education_tb">
+          <Key>
+            <PropertyRef Name="EID" />
+          </Key>
+          <Property Name="EID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Job_seeker_ID" Type="Int32" />
+          <Property Name="CollageName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Enrollment_Number" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Semester" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Education" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Branch" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Passyear" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CPI" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CGPA" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Skill" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraSkill" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Resume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="jobseeker_tb" Relationship="Self.FK__Education__Job_s__276EDEB3" FromRole="Education_tb" ToRole="jobseeker_tb" />
+        </EntityType>
+        <EntityType Name="inbox_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Names" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Froms" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Tos" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Messages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statuss" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="job_categorytb">
+          <Key>
+            <PropertyRef Name="job_cat_id" />
+          </Key>
+          <Property Name="job_cat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="job_cat_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="entry_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PostJob_tb" Relationship="Self.FK__PostJob_t__job_c__30F848ED" FromRole="job_categorytb" ToRole="PostJob_tb" />
+        </EntityType>
+        <EntityType Name="Job_location">
+          <Key>
+            <PropertyRef Name="JobLocation_ID" />
+          </Key>
+          <Property Name="JobLocation_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PostJob_tb" Relationship="Self.FK__PostJob_t__Job_l__31EC6D26" FromRole="Job_location" ToRole="PostJob_tb" />
+        </EntityType>
+        <EntityType Name="jobseeker_tb">
+          <Key>
+            <PropertyRef Name="JS_ID" />
+          </Key>
+          <Property Name="JS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ApplyJob_tb" Relationship="Self.FK__ApplyJob___Job_s__36B12243" FromRole="jobseeker_tb" ToRole="ApplyJob_tb" />
+          <NavigationProperty Name="Education_tb" Relationship="Self.FK__Education__Job_s__276EDEB3" FromRole="jobseeker_tb" ToRole="Education_tb" />
+        </EntityType>
+        <EntityType Name="PostJob_tb">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_ID" Type="Int32" />
+          <Property Name="job_cat_id" Type="Int32" />
+          <Property Name="RequiredSkill" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Min_Qualification" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraSkill" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Max_age" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Expected_salary" Type="Int32" />
+          <Property Name="Job_location" Type="Int32" />
+          <Property Name="Working_Hour" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Job_Desc" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="LastApplyDate" Type="DateTime" Precision="3" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ApplyJob_tb" Relationship="Self.FK__ApplyJob___JobID__34C8D9D1" FromRole="PostJob_tb" ToRole="ApplyJob_tb" />
+          <NavigationProperty Name="Company_tb" Relationship="Self.FK__PostJob_t__Compa__300424B4" FromRole="PostJob_tb" ToRole="Company_tb" />
+          <NavigationProperty Name="job_categorytb" Relationship="Self.FK__PostJob_t__job_c__30F848ED" FromRole="PostJob_tb" ToRole="job_categorytb" />
+          <NavigationProperty Name="Job_location1" Relationship="Self.FK__PostJob_t__Job_l__31EC6D26" FromRole="PostJob_tb" ToRole="Job_location" />
+        </EntityType>
+        <Association Name="FK__ApplyJob___Compa__35BCFE0A">
+          <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
+          <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company_tb">
+              <PropertyRef Name="CID" />
+            </Principal>
+            <Dependent Role="ApplyJob_tb">
+              <PropertyRef Name="Company_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ApplyJob___Job_s__36B12243">
+          <End Role="jobseeker_tb" Type="Self.jobseeker_tb" Multiplicity="0..1" />
+          <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobseeker_tb">
+              <PropertyRef Name="JS_ID" />
+            </Principal>
+            <Dependent Role="ApplyJob_tb">
+              <PropertyRef Name="Job_seekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ApplyJob___JobID__34C8D9D1">
+          <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="0..1" />
+          <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostJob_tb">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="ApplyJob_tb">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PostJob_t__Compa__300424B4">
+          <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
+          <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company_tb">
+              <PropertyRef Name="CID" />
+            </Principal>
+            <Dependent Role="PostJob_tb">
+              <PropertyRef Name="Company_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Education__Job_s__276EDEB3">
+          <End Role="jobseeker_tb" Type="Self.jobseeker_tb" Multiplicity="0..1" />
+          <End Role="Education_tb" Type="Self.Education_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobseeker_tb">
+              <PropertyRef Name="JS_ID" />
+            </Principal>
+            <Dependent Role="Education_tb">
+              <PropertyRef Name="Job_seeker_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PostJob_t__job_c__30F848ED">
+          <End Role="job_categorytb" Type="Self.job_categorytb" Multiplicity="0..1" />
+          <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_categorytb">
+              <PropertyRef Name="job_cat_id" />
+            </Principal>
+            <Dependent Role="PostJob_tb">
+              <PropertyRef Name="job_cat_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PostJob_t__Job_l__31EC6D26">
+          <End Role="Job_location" Type="Self.Job_location" Multiplicity="0..1" />
+          <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_location">
+              <PropertyRef Name="JobLocation_ID" />
+            </Principal>
+            <Dependent Role="PostJob_tb">
+              <PropertyRef Name="Job_location" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Job_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admin_tb" EntityType="Self.admin_tb" />
+          <EntitySet Name="ApplyJob_tb" EntityType="Self.ApplyJob_tb" />
+          <EntitySet Name="Company_tb" EntityType="Self.Company_tb" />
+          <EntitySet Name="Education_tb" EntityType="Self.Education_tb" />
+          <EntitySet Name="inbox_tb" EntityType="Self.inbox_tb" />
+          <EntitySet Name="job_categorytb" EntityType="Self.job_categorytb" />
+          <EntitySet Name="Job_location" EntityType="Self.Job_location" />
+          <EntitySet Name="jobseeker_tb" EntityType="Self.jobseeker_tb" />
+          <EntitySet Name="PostJob_tb" EntityType="Self.PostJob_tb" />
+          <AssociationSet Name="FK__ApplyJob___Compa__35BCFE0A" Association="Self.FK__ApplyJob___Compa__35BCFE0A">
+            <End Role="Company_tb" EntitySet="Company_tb" />
+            <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ApplyJob___Job_s__36B12243" Association="Self.FK__ApplyJob___Job_s__36B12243">
+            <End Role="jobseeker_tb" EntitySet="jobseeker_tb" />
+            <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ApplyJob___JobID__34C8D9D1" Association="Self.FK__ApplyJob___JobID__34C8D9D1">
+            <End Role="PostJob_tb" EntitySet="PostJob_tb" />
+            <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PostJob_t__Compa__300424B4" Association="Self.FK__PostJob_t__Compa__300424B4">
+            <End Role="Company_tb" EntitySet="Company_tb" />
+            <End Role="PostJob_tb" EntitySet="PostJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Education__Job_s__276EDEB3" Association="Self.FK__Education__Job_s__276EDEB3">
+            <End Role="jobseeker_tb" EntitySet="jobseeker_tb" />
+            <End Role="Education_tb" EntitySet="Education_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PostJob_t__job_c__30F848ED" Association="Self.FK__PostJob_t__job_c__30F848ED">
+            <End Role="job_categorytb" EntitySet="job_categorytb" />
+            <End Role="PostJob_tb" EntitySet="PostJob_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PostJob_t__Job_l__31EC6D26" Association="Self.FK__PostJob_t__Job_l__31EC6D26">
+            <End Role="Job_location" EntitySet="Job_location" />
+            <End Role="PostJob_tb" EntitySet="PostJob_tb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Job_DatabaseModelStoreContainer" CdmEntityContainer="Job_DatabaseEntities">
+          <EntitySetMapping Name="admin_tb">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.admin_tb">
+              <MappingFragment StoreEntitySet="admin_tb">
+                <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplyJob_tb">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.ApplyJob_tb">
+              <MappingFragment StoreEntitySet="ApplyJob_tb">
+                <ScalarProperty Name="AJ_ID" ColumnName="AJ_ID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Job_seekerID" ColumnName="Job_seekerID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company_tb">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.Company_tb">
+              <MappingFragment StoreEntitySet="Company_tb">
+                <ScalarProperty Name="CID" ColumnName="CID" />
+                <ScalarProperty Name="CNAME" ColumnName="CNAME" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Education_tb">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.Education_tb">
+              <MappingFragment StoreEntitySet="Education_tb">
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="Job_seeker_ID" ColumnName="Job_seeker_ID" />
+                <ScalarProperty Name="CollageName" ColumnName="CollageName" />
+                <ScalarProperty Name="Enrollment_Number" ColumnName="Enrollment_Number" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="Passyear" ColumnName="Passyear" />
+                <ScalarProperty Name="CPI" ColumnName="CPI" />
+                <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+                <ScalarProperty Name="ExtraSkill" ColumnName="ExtraSkill" />
+                <ScalarProperty Name="Resume" ColumnName="Resume" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inbox_tb">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.inbox_tb">
+              <MappingFragment StoreEntitySet="inbox_tb">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Names" ColumnName="Names" />
+                <ScalarProperty Name="Froms" ColumnName="Froms" />
+                <ScalarProperty Name="Tos" ColumnName="Tos" />
+                <ScalarProperty Name="Messages" ColumnName="Messages" />
+                <ScalarProperty Name="Statuss" ColumnName="Statuss" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="job_categorytb">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.job_categorytb">
+              <MappingFragment StoreEntitySet="job_categorytb">
+                <ScalarProperty Name="job_cat_id" ColumnName="job_cat_id" />
+                <ScalarProperty Name="job_cat_name" ColumnName="job_cat_name" />
+                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Job_location">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.Job_location">
+              <MappingFragment StoreEntitySet="Job_location">
+                <ScalarProperty Name="JobLocation_ID" ColumnName="JobLocation_ID" />
+                <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobseeker_tb">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.jobseeker_tb">
+              <MappingFragment StoreEntitySet="jobseeker_tb">
+                <ScalarProperty Name="JS_ID" ColumnName="JS_ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostJob_tb">
+            <EntityTypeMapping TypeName="Job_DatabaseModel.PostJob_tb">
+              <MappingFragment StoreEntitySet="PostJob_tb">
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="job_cat_id" ColumnName="job_cat_id" />
+                <ScalarProperty Name="RequiredSkill" ColumnName="RequiredSkill" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Min_Qualification" ColumnName="Min_Qualification" />
+                <ScalarProperty Name="ExtraSkill" ColumnName="ExtraSkill" />
+                <ScalarProperty Name="Max_age" ColumnName="Max_age" />
+                <ScalarProperty Name="Expected_salary" ColumnName="Expected_salary" />
+                <ScalarProperty Name="Job_location" ColumnName="Job_location" />
+                <ScalarProperty Name="Working_Hour" ColumnName="Working_Hour" />
+                <ScalarProperty Name="Job_Desc" ColumnName="Job_Desc" />
+                <ScalarProperty Name="LastApplyDate" ColumnName="LastApplyDate" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -30,5 +30,33 @@ namespace Job_portal.Controllers
             return View(getjob_cat);
         }
 
+        public ActionResult job_location_info()
+        {
+            var getlocation = db.Job_location.ToList();
+            return View(getlocation);
+        }
+
+        public ActionResult JobSeeker()
+        {
+            var getjobseeker = db.jobseeker_tb.ToList();
+            return View(getjobseeker);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var getdetails = db.jobseeker_tb.Where(x=>x.JS_ID==id).FirstOrDefault();
+
+            return PartialView(getdetails);
+        }
+
+        //Detail page
+        public ActionResult Detail(int id)
+        {
+            var getdetails = db.jobseeker_tb.Find(id);
+
+            return View(getdetails);
+        }
+
+        
     }
 }

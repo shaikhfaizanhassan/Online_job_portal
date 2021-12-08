@@ -17,7 +17,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -539,6 +539,9 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\SignUp.cshtml" />
     <Content Include="Views\Admin\job_cat_info.cshtml" />
+    <Content Include="Views\Admin\job_location_info.cshtml" />
+    <Content Include="Views\Admin\JobSeeker.cshtml" />
+    <Content Include="Views\Admin\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -577,7 +580,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50303</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50303/</IISUrl>
+          <IISUrl>http://localhost:5030/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

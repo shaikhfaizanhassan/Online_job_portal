@@ -49,7 +49,7 @@ namespace Job_portal.Controllers
             return PartialView(getdetails);
         }
 
-        //Detail page
+        //Detail page ss
         public ActionResult Detail(int id)
         {
             var getdetails = db.jobseeker_tb.Find(id);

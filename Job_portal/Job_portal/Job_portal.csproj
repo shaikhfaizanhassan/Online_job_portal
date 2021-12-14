@@ -542,6 +542,13 @@
     <Content Include="Views\Admin\job_location_info.cshtml" />
     <Content Include="Views\Admin\JobSeeker.cshtml" />
     <Content Include="Views\Admin\Detail.cshtml" />
+    <Content Include="Views\Admin\CompanyInfo.cshtml" />
+    <Content Include="Views\Admin\CompanyDetail.cshtml" />
+    <Content Include="Views\Admin\EducAtionInfo.cshtml" />
+    <Content Include="Views\Admin\EducationDetail.cshtml" />
+    <Content Include="Views\Admin\checkPostedJob.cshtml" />
+    <Content Include="Views\Admin\JobPostedDetail.cshtml" />
+    <Content Include="Views\Admin\PostedJobEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

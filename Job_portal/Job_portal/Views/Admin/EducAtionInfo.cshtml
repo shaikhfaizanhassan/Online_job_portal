@@ -1,12 +1,9 @@
-﻿@model IEnumerable<Job_portal.Models.jobseeker_tb>
+﻿@model IEnumerable<Job_portal.Models.Education_tb>
 
 @{
-    ViewBag.Title = "JobSeeker";
+    ViewBag.Title = "EducAtionInfo";
     Layout = "~/Views/Shared/_LayoutAdminDesign.cshtml";
-
 }
-
-
 
 <div class="main_content_iner ">
     <div class="container-fluid p-0">
@@ -16,7 +13,7 @@
                     <div class="white_card_header">
                         <div class="box_header m-0">
                             <div class="main-title">
-                                <h3 class="m-0">View Job Category</h3>
+                                <h3 class="m-0">View Company</h3>
                             </div>
                         </div>
                     </div>
@@ -47,58 +44,52 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Gender</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Password</th>
+                                            <th scope="col">Job SID</th>
+                                            <th scope="col">Collage </th>
+                                            <th scope="col">Enrollment</th>
+                                            <th scope="col">Semester</th>
+                                            <th scope="col">Education</th>
+                                            <th scope="col">Action</th>
+
 
 
                                         </tr>
                                     </thead>
                                     <tbody>
 
-
-
                                         @foreach (var item in Model)
                                         {
                                             <tr>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.JS_ID)
-                                                </td>
-
-                                                <td>
-                                                  <input type="hidden" value="@item.JS_ID" id="fname"/>      
-                                                    @item.FirstName
-                                                </td>
-
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Address)
+                                                    @Html.DisplayFor(modelItem => item.EID)
                                                 </td>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.Gender)
-                                                </td>
-
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.EmailID)
+                                                    @Html.DisplayFor(modelItem => item.Job_seeker_ID)
                                                 </td>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.Password)
+                                                    @Html.DisplayFor(modelItem => item.CollageName)
                                                 </td>
                                                 <td>
-                                                    @Html.ActionLink("Edit", "Edit", new { id = item.JS_ID }, new { @class = "btn btn-primary  btn-sm" })
+                                                    @Html.DisplayFor(modelItem => item.Enrollment_Number)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Semester)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Education)
+                                                </td>
+                                                
+                                                <td>
+                                                    @Html.ActionLink("Edit", "Edit", new { id = item.EID }, new { @class = "btn btn-primary  btn-sm" })
                                                     @*@Html.ActionLink("Details", "Details", new { id = item.JS_ID }, new { @class = "deleteLink btn btn-info btn-sm" })*@
-                                                    @Html.ActionLink("Delete", "Delete", new { id = item.JS_ID }, new { @class = "btn btn-danger btn-sm" })
-                                                    <button type="button" class="btn btn-info btn-sm" onclick="Details(@item.JS_ID)" @*data-toggle="modal" data-target="#myModal"*@>Details..</button>
-                                                    
-                                                </td>
-                                                <td>
-                                               
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.EID }, new { @class = "btn btn-danger btn-sm" })
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="Details(@item.EID)" @*data-toggle="modal" data-target="#myModal"*@>Details..</button>
+
                                                 </td>
                                             </tr>
-
-
                                         }
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -109,6 +100,8 @@
         </div>
     </div>
 </div>
+
+
 
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -135,9 +128,10 @@
     </div>
 </div>
 
+
 <script>
     function Details(id) {
-        $.get("@Url.Action("Detail","Admin")/"+id, function (data) { $('.modal-body').html(data); });
+        $.get("@Url.Action("EducationDetail", "Admin")/"+id, function (data) { $('.modal-body').html(data); });
         $('#myModal').modal('show');
     }
 
@@ -148,8 +142,6 @@
 
 <!-- Trigger the modal with a button -->
 <!-- Modal -->
-
-
 
 
 

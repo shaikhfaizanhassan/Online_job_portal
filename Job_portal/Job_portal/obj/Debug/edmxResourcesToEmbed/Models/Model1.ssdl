@@ -124,6 +124,9 @@
     <Property Name="Job_Desc" Type="nvarchar" MaxLength="60" />
     <Property Name="LastApplyDate" Type="datetime" />
     <Property Name="EntryDate" Type="datetime" />
+    <Property Name="Contact_person" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+    <Property Name="JobStatus" Type="int" />
   </EntityType>
   <Association Name="FK__ApplyJob___Compa__35BCFE0A">
     <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />

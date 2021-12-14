@@ -138,6 +138,9 @@
     <NavigationProperty Name="Company_tb" Relationship="Self.FK__PostJob_t__Compa__300424B4" FromRole="PostJob_tb" ToRole="Company_tb" />
     <NavigationProperty Name="job_categorytb" Relationship="Self.FK__PostJob_t__job_c__30F848ED" FromRole="PostJob_tb" ToRole="job_categorytb" />
     <NavigationProperty Name="Job_location1" Relationship="Self.FK__PostJob_t__Job_l__31EC6D26" FromRole="PostJob_tb" ToRole="Job_location" />
+    <Property Name="Contact_person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JobStatus" Type="Int32" />
   </EntityType>
   <Association Name="FK__ApplyJob___Compa__35BCFE0A">
     <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />

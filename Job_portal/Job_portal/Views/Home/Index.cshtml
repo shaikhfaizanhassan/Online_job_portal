@@ -1,8 +1,39 @@
 ﻿
 @{
+    /**/
+
+    /**/
+
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutFrontDesign.cshtml";
 }
 
-<h2>Index</h2>
+@foreach (var item in ViewBag.showjob)
+{
+    if (item.JobStatus == 1)
+    {
+        <div class="jobs-latest">
+            <div class="col-lg-6 col-md-12 col-xs-12">
+                <div class="img-thumb">
+                    <img src="~/assets/img/features/img-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3><a href="job-details.html">@item.Role</a></h3>
+                    <p class="brand">@item.CompanyName</p>
+                    <div class="tags">
+                        <span><i class="lni-map-marker"></i>@item.Job_location</span>
+                        <span><i class="lni-user"></i>  @item.Contact_person</span>
+                    </div>
+                    <div class="tag mb-3"><i class="lni-tag"></i>@item.RequiredSkill</div>
+                    <span class="full-time">Full Time</span>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-12 text-center mt-4">
+            <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
+        </div>
+
+    }
+
+}

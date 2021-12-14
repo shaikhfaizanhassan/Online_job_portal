@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Job_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Job_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="admin_tb">
           <Key>
             <PropertyRef Name="Admin_ID" />
@@ -129,6 +129,9 @@
           <Property Name="Job_Desc" Type="nvarchar" MaxLength="60" />
           <Property Name="LastApplyDate" Type="datetime" />
           <Property Name="EntryDate" Type="datetime" />
+          <Property Name="Contact_person" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="JobStatus" Type="int" />
         </EntityType>
         <Association Name="FK__ApplyJob___Compa__35BCFE0A">
           <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
@@ -253,8 +256,7 @@
             <End Role="PostJob_tb" EntitySet="PostJob_tb" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Job_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -396,6 +398,9 @@
           <NavigationProperty Name="Company_tb" Relationship="Self.FK__PostJob_t__Compa__300424B4" FromRole="PostJob_tb" ToRole="Company_tb" />
           <NavigationProperty Name="job_categorytb" Relationship="Self.FK__PostJob_t__job_c__30F848ED" FromRole="PostJob_tb" ToRole="job_categorytb" />
           <NavigationProperty Name="Job_location1" Relationship="Self.FK__PostJob_t__Job_l__31EC6D26" FromRole="PostJob_tb" ToRole="Job_location" />
+          <Property Name="Contact_person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JobStatus" Type="Int32" />
         </EntityType>
         <Association Name="FK__ApplyJob___Compa__35BCFE0A">
           <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
@@ -643,6 +648,9 @@
           <EntitySetMapping Name="PostJob_tb">
             <EntityTypeMapping TypeName="Job_DatabaseModel.PostJob_tb">
               <MappingFragment StoreEntitySet="PostJob_tb">
+                <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Contact_person" ColumnName="Contact_person" />
                 <ScalarProperty Name="JobID" ColumnName="JobID" />
                 <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
                 <ScalarProperty Name="job_cat_id" ColumnName="job_cat_id" />

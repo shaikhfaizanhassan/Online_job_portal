@@ -40,6 +40,7 @@
     <Property Name="Password" Type="nvarchar" MaxLength="60" />
     <Property Name="Website" Type="nvarchar" MaxLength="60" />
     <Property Name="EntryDate" Type="datetime" />
+    <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="Education_tb">
     <Key>
@@ -105,6 +106,7 @@
     <Property Name="UserName" Type="nvarchar" MaxLength="60" />
     <Property Name="Password" Type="nvarchar" MaxLength="60" />
     <Property Name="EntryDate" Type="datetime" />
+    <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="PostJob_tb">
     <Key>

@@ -48,10 +48,12 @@
                                         <tr>
                                             <th scope="col">ID</th>
                                             <th scope="col">Name</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Gender</th>
+                                            <th scope="col">State</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Password</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+
 
 
                                         </tr>
@@ -62,42 +64,48 @@
 
                                         @foreach (var item in Model)
                                         {
-                                            <tr>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.JS_ID)
-                                                </td>
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.JS_ID)
+                                            </td>
 
-                                                <td>
-                                                  <input type="hidden" value="@item.JS_ID" id="fname"/>      
-                                                    @item.FirstName
-                                                </td>
+                                            <td>
+                                                <input type="hidden" value="@item.JS_ID" id="fname" />
+                                                @item.FirstName
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.State)
+                                            </td>
 
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Address)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Gender)
-                                                </td>
+                                            
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EmailID)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Password)
+                                            </td>
 
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.EmailID)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Password)
-                                                </td>
-                                                <td>
-                                                    @Html.ActionLink("Edit", "Edit", new { id = item.JS_ID }, new { @class = "btn btn-primary  btn-sm" })
-                                                    @*@Html.ActionLink("Details", "Details", new { id = item.JS_ID }, new { @class = "deleteLink btn btn-info btn-sm" })*@
-                                                    @Html.ActionLink("Delete", "Delete", new { id = item.JS_ID }, new { @class = "btn btn-danger btn-sm" })
-                                                    <button type="button" class="btn btn-info btn-sm" onclick="Details(@item.JS_ID)" @*data-toggle="modal" data-target="#myModal"*@>Details..</button>
-                                                    
-                                                </td>
-                                                <td>
-                                               
-                                                </td>
-                                            </tr>
+                                            <td>
+                                                @if (item.Status==0)
+                                                {
+                                                    <div class="alert alert-danger ">Not Active</div>
 
+                                                }
+                                                else
+                                                {
+                                                    <div class="alert alert-success sm">Active</div>
 
+                                                }
+                                            </td>
+
+                                            <td>
+                                                @Html.ActionLink("Edit", "JobseekerEdit", new { id = item.JS_ID }, new { @class = "btn btn-primary  btn-sm" })
+                                                @*@Html.ActionLink("Details", "Details", new { id = item.JS_ID }, new { @class = "deleteLink btn btn-info btn-sm" })*@
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.JS_ID }, new { @class = "btn btn-danger btn-sm" })
+                                                <button type="button" class="btn btn-info btn-sm" onclick="Details(@item.JS_ID)" @*data-toggle="modal" data-target="#myModal"*@>Details..</button>
+                                            </td>
+                                            <td></td>
+                                        </tr>
                                         }
                                     </tbody>
                                 </table>

@@ -29,6 +29,7 @@
     <EntitySetMapping Name="Company_tb">
       <EntityTypeMapping TypeName="Job_DatabaseModel.Company_tb">
         <MappingFragment StoreEntitySet="Company_tb">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="CID" ColumnName="CID" />
           <ScalarProperty Name="CNAME" ColumnName="CNAME" />
           <ScalarProperty Name="Address" ColumnName="Address" />
@@ -99,6 +100,7 @@
     <EntitySetMapping Name="jobseeker_tb">
       <EntityTypeMapping TypeName="Job_DatabaseModel.jobseeker_tb">
         <MappingFragment StoreEntitySet="jobseeker_tb">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="JS_ID" ColumnName="JS_ID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />

@@ -21,7 +21,6 @@
                     <div class="white_card_body">
                         <div class="QA_section">
                             <div class="white_box_tittle list_header">
-
                                 <div class="box_right d-flex lms_block">
                                     <div class="serach_field_2">
                                         <div class="search_inner">
@@ -38,7 +37,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="QA_table mb_30">
                                 <!-- table-responsive -->
                                 <table class="table table-responsive" id="showtable">
@@ -46,53 +44,49 @@
                                         <tr>
                                             <th scope="col">ID</th>
                                             <th scope="col">Conpany Name</th>
-                                            <th scope="col">Address</th>
                                             <th scope="col">City</th>
-                                            <th scope="col">State</th>
+                                            <th scope="col">Status</th>
                                             <th scope="col">User Name</th>
                                             <th scope="col">Action</th>
-
-
-
                                         </tr>
                                     </thead>
                                     <tbody>
 
                                         @foreach (var item in Model)
                                         {
-                                            <tr>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.CID)
-                                                </td>
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CID)
+                                            </td>
 
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.CNAME)
-                                                </td>
-
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Address)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.City)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.State)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.ContactPerson)
-                                                </td>
-
-
-                                                <td>
-                                                    @Html.ActionLink("Edit", "Edit", new { id = item.CID }, new { @class = "btn btn-primary  btn-sm" })
-                                                    @*@Html.ActionLink("Details", "Details", new { id = item.JS_ID }, new { @class = "deleteLink btn btn-info btn-sm" })*@
-                                                    @Html.ActionLink("Delete", "Delete", new { id = item.CID }, new { @class = "btn btn-danger btn-sm" })
-                                                    <button type="button" class="btn btn-info btn-sm" onclick="Details(@item.CID)" @*data-toggle="modal" data-target="#myModal"*@>Details..</button>
-
-                                                </td>
-                                            </tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CNAME)
+                                            </td>
+                                            
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.City)
+                                            </td>
+                                            <td>
+                                                @if (item.Status == 0)
+                                                {
+                                                    <div class="alert alert-danger ">Not Active</div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="alert alert-success sm">Active</div>
+                                                }
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ContactPerson)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "EditCompnayDetail", new { id = item.CID }, new { @class = "btn btn-primary  btn-sm" })
+                                                @*@Html.ActionLink("Details", "Details", new { id = item.JS_ID }, new { @class = "deleteLink btn btn-info btn-sm" })*@
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.CID }, new { @class = "btn btn-danger btn-sm" })
+                                                <button type="button" class="btn btn-info btn-sm" onclick="Details(@item.CID)" @*data-toggle="modal" data-target="#myModal"*@>Details..</button>
+                                            </td>
+                                        </tr>
                                         }
-
                                     </tbody>
                                 </table>
                             </div>

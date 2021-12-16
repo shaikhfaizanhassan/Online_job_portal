@@ -33,6 +33,7 @@ namespace Job_portal.Models
         public string UserName { get; set; }
         public string Password { get; set; }
         public Nullable<System.DateTime> EntryDate { get; set; }
+        public Nullable<int> Status { get; set; }
     
         public virtual ICollection<ApplyJob_tb> ApplyJob_tb { get; set; }
         public virtual ICollection<Education_tb> Education_tb { get; set; }

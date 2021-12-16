@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobSeekerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -536,8 +537,6 @@
     <Content Include="vendors\themefy_icon\fonts\themifyd41d.eot" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFrontDesignBlank.cshtml" />
-    <Content Include="Views\Admin\Login.cshtml" />
-    <Content Include="Views\Admin\SignUp.cshtml" />
     <Content Include="Views\Admin\job_cat_info.cshtml" />
     <Content Include="Views\Admin\job_location_info.cshtml" />
     <Content Include="Views\Admin\JobSeeker.cshtml" />
@@ -549,9 +548,13 @@
     <Content Include="Views\Admin\checkPostedJob.cshtml" />
     <Content Include="Views\Admin\JobPostedDetail.cshtml" />
     <Content Include="Views\Admin\PostedJobEdit.cshtml" />
+    <Content Include="Views\Admin\JobseekerEdit.cshtml" />
+    <Content Include="Views\Admin\EditCompnayDetail.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\JobSeeker\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -154,7 +154,6 @@ F:\Job Portal\Job_portal\Job_portal\bin\EntityFramework.xml
 F:\Job Portal\Job_portal\Job_portal\bin\EntityFramework.SqlServer.dll
 F:\Job Portal\Job_portal\Job_portal\bin\EntityFramework.SqlServer.xml
 F:\Job Portal\Job_portal\Job_portal\obj\Debug\Job_portal.csprojAssemblyReference.cache
-F:\Online_job_portal\Job_portal\Job_portal\bin\EntityFramework.xml
 F:\Online_job_portal\Job_portal\Job_portal\bin\Job_portal.dll.config
 F:\Online_job_portal\Job_portal\Job_portal\bin\Job_portal.dll
 F:\Online_job_portal\Job_portal\Job_portal\bin\Job_portal.pdb
@@ -218,6 +217,7 @@ F:\Online_job_portal\Job_portal\Job_portal\bin\System.Web.WebPages.Deployment.dl
 F:\Online_job_portal\Job_portal\Job_portal\bin\System.Web.WebPages.dll
 F:\Online_job_portal\Job_portal\Job_portal\bin\System.Web.WebPages.Razor.dll
 F:\Online_job_portal\Job_portal\Job_portal\bin\WebGrease.dll
+F:\Online_job_portal\Job_portal\Job_portal\bin\EntityFramework.xml
 F:\Online_job_portal\Job_portal\Job_portal\bin\EntityFramework.SqlServer.xml
 F:\Online_job_portal\Job_portal\Job_portal\bin\System.Web.Helpers.xml
 F:\Online_job_portal\Job_portal\Job_portal\bin\System.Web.Mvc.xml
@@ -229,8 +229,8 @@ F:\Online_job_portal\Job_portal\Job_portal\bin\System.Web.WebPages.Razor.xml
 F:\Online_job_portal\Job_portal\Job_portal\bin\Newtonsoft.Json.xml
 F:\Online_job_portal\Job_portal\Job_portal\bin\Antlr3.Runtime.pdb
 F:\Online_job_portal\Job_portal\Job_portal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.csprojAssemblyReference.cache
 F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.csproj.CoreCompileInputs.cache
 F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.csproj.CopyComplete
 F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.dll
 F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.pdb
+F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.csprojAssemblyReference.cache

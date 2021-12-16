@@ -45,6 +45,7 @@
           <Property Name="Password" Type="nvarchar" MaxLength="60" />
           <Property Name="Website" Type="nvarchar" MaxLength="60" />
           <Property Name="EntryDate" Type="datetime" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Education_tb">
           <Key>
@@ -110,6 +111,7 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="60" />
           <Property Name="Password" Type="nvarchar" MaxLength="60" />
           <Property Name="EntryDate" Type="datetime" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="PostJob_tb">
           <Key>
@@ -305,6 +307,7 @@
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="ApplyJob_tb" Relationship="Self.FK__ApplyJob___Compa__35BCFE0A" FromRole="Company_tb" ToRole="ApplyJob_tb" />
           <NavigationProperty Name="PostJob_tb" Relationship="Self.FK__PostJob_t__Compa__300424B4" FromRole="Company_tb" ToRole="PostJob_tb" />
+          <Property Name="Status" Type="Int32" />
         </EntityType>
         <EntityType Name="Education_tb">
           <Key>
@@ -375,6 +378,7 @@
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="ApplyJob_tb" Relationship="Self.FK__ApplyJob___Job_s__36B12243" FromRole="jobseeker_tb" ToRole="ApplyJob_tb" />
           <NavigationProperty Name="Education_tb" Relationship="Self.FK__Education__Job_s__276EDEB3" FromRole="jobseeker_tb" ToRole="Education_tb" />
+          <Property Name="Status" Type="Int32" />
         </EntityType>
         <EntityType Name="PostJob_tb">
           <Key>
@@ -559,6 +563,7 @@
           <EntitySetMapping Name="Company_tb">
             <EntityTypeMapping TypeName="Job_DatabaseModel.Company_tb">
               <MappingFragment StoreEntitySet="Company_tb">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="CID" ColumnName="CID" />
                 <ScalarProperty Name="CNAME" ColumnName="CNAME" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
@@ -629,6 +634,7 @@
           <EntitySetMapping Name="jobseeker_tb">
             <EntityTypeMapping TypeName="Job_DatabaseModel.jobseeker_tb">
               <MappingFragment StoreEntitySet="jobseeker_tb">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="JS_ID" ColumnName="JS_ID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

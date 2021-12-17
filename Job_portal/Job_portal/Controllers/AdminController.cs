@@ -82,6 +82,7 @@ namespace Job_portal.Controllers
         {
             var getdetails = db.jobseeker_tb.Find(id);
 
+
             return View(getdetails);
         }
 
@@ -183,6 +184,29 @@ namespace Job_portal.Controllers
             return View();
         }
 
+        public ActionResult ApplyJobStatus()
+        {
+            var p = db.ApplyJob_tb.ToList();
+            ViewBag.p = p;
+            return View();
+        }
+
+        public ActionResult DownloadResume(int id)
+        {
+
+            var a = db.Education_tb.Where(x => x.Job_seeker_ID == id).ToList();
+            //            var getdetails = db.Education_tb.Find(id);
+            ViewBag.p = a;
+            return View();
+        }
+        [HttpPost]
+
+        //edit company details
+        public ActionResult DownloadResume()
+        {
+            var getcompanyedit = db.Education_tb.Where(x => x.Job_seeker_ID == x.Job_seeker_ID).FirstOrDefault();
+            return View(getcompanyedit);
+        }
 
 
     }

@@ -551,10 +551,15 @@
     <Content Include="Views\Admin\JobseekerEdit.cshtml" />
     <Content Include="Views\Admin\EditCompnayDetail.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Shared\_LayoutJobSeekerDashboardDesign.cshtml" />
+    <Content Include="Views\JobSeeker\Index.cshtml" />
+    <Content Include="Views\Admin\ApplyJobStatus.cshtml" />
+    <Content Include="Views\Home\ConfirmApplyJob.cshtml" />
+    <Content Include="Views\Admin\DownloadResume.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\JobSeeker\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

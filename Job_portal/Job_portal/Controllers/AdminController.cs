@@ -15,6 +15,7 @@ namespace Job_portal.Controllers
      
         public ActionResult Index()
         {
+            TempData["username"] = Session["adminemail"];
             return View();
         }
 

@@ -15,15 +15,12 @@
     <div class="row">
         <div class="col-6">
             <h2>Login</h2>
-
             @using (Html.BeginForm("Loginset", "Admin", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
-
                     <hr />
-
                     <div class="form-group">
                         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -31,9 +28,6 @@
                             @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                         </div>
                     </div>
-
-
-
                     <div class="form-group">
                         @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -48,8 +42,12 @@
                             <input type="submit" value="Login" class="btn btn-danger" />
                         </div>
                     </div>
-                </div>
+
+
+                </div><h4>@TempData["Eror"]</h4>
+
             }
+
 
         </div>
     </div>

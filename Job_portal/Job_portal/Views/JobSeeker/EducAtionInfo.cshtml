@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<Job_portal.Models.Education_tb>
 
 @{
-    ViewBag.Title = "EducAtionInfo";
-    Layout = "~/Views/Shared/_LayoutAdminDesign.cshtml";
+    ViewBag.Title = "JobSeeker";
+    Layout = "~/Views/Shared/_LayoutJobSeekerDashboardDesign.cshtml";
+
 }
+
 
 <div class="main_content_iner ">
     <div class="container-fluid p-0">
@@ -74,7 +76,7 @@
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.Education)
                                                 </td>
-                                                
+
                                                 <td>
                                                     @Html.ActionLink("Edit", "Edit", new { id = item.EID }, new { @class = "btn btn-primary  btn-sm" })
                                                     @*@Html.ActionLink("Details", "Details", new { id = item.JS_ID }, new { @class = "deleteLink btn btn-info btn-sm" })*@

@@ -28,6 +28,11 @@ namespace Job_portal.Models
         public string ExtraSkill { get; set; }
         public string Resume { get; set; }
         public Nullable<System.DateTime> EntryDate { get; set; }
+        public string condidatename { get; set; }
+        public string phonenumber { get; set; }
+        public string email { get; set; }
+        public string Educations { get; set; }
+        public string workingexp { get; set; }
     
         public virtual jobseeker_tb jobseeker_tb { get; set; }
     }

@@ -65,6 +65,11 @@
           <Property Name="ExtraSkill" Type="nvarchar" MaxLength="60" />
           <Property Name="Resume" Type="nvarchar" MaxLength="100" />
           <Property Name="EntryDate" Type="datetime" />
+          <Property Name="condidatename" Type="varchar" MaxLength="50" />
+          <Property Name="phonenumber" Type="varchar" MaxLength="15" />
+          <Property Name="email" Type="varchar" MaxLength="35" />
+          <Property Name="Educations" Type="varchar(max)" />
+          <Property Name="workingexp" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="inbox_tb">
           <Key>
@@ -328,6 +333,11 @@
           <Property Name="Resume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="jobseeker_tb" Relationship="Self.FK__Education__Job_s__276EDEB3" FromRole="Education_tb" ToRole="jobseeker_tb" />
+          <Property Name="condidatename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phonenumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Educations" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="workingexp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="inbox_tb">
           <Key>
@@ -583,6 +593,11 @@
           <EntitySetMapping Name="Education_tb">
             <EntityTypeMapping TypeName="Job_DatabaseModel.Education_tb">
               <MappingFragment StoreEntitySet="Education_tb">
+                <ScalarProperty Name="workingexp" ColumnName="workingexp" />
+                <ScalarProperty Name="Educations" ColumnName="Educations" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+                <ScalarProperty Name="condidatename" ColumnName="condidatename" />
                 <ScalarProperty Name="EID" ColumnName="EID" />
                 <ScalarProperty Name="Job_seeker_ID" ColumnName="Job_seeker_ID" />
                 <ScalarProperty Name="CollageName" ColumnName="CollageName" />

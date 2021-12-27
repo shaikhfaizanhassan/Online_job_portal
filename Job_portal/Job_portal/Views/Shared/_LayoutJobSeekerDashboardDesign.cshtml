@@ -49,6 +49,9 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" href="~/css/colors/default.css" id="colorSkinCSS">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="~/Content/resumestyle.css" rel="stylesheet" />
 </head>
 <body class="crm_body_bg">
 
@@ -86,7 +89,7 @@
                 <ul>
 
                     <li>
-                        @Html.ActionLink("Job Seaker", "JobSeeker", "Admin")
+                        @Html.ActionLink("Job Seaker", "JobSeeker", "JobSeeker")
                     </li>
 
                 </ul>
@@ -106,7 +109,7 @@
                 <ul>
 
                     <li>
-                        @Html.ActionLink("Education Info", "EducAtionInfo", "Admin")
+                        @Html.ActionLink("Education Info", "EducAtionInfo", "JobSeeker")
                     </li>
 
                 </ul>
@@ -114,7 +117,7 @@
 
             </li>
 
-            <li class="">
+            @*<li class="">
                 <a class="has-arrow" href="#" aria-expanded="false">
 
                     <div class="icon_menu">
@@ -131,9 +134,9 @@
                 </ul>
 
 
-            </li>
+            </li>*@
 
-            <li class="">
+            @*<li class="">
                 <a class="has-arrow" href="#" aria-expanded="false">
 
                     <div class="icon_menu">
@@ -152,9 +155,9 @@
                 </ul>
 
 
-            </li>
+            </li>*@
 
-            <li class="">
+            @*<li class="">
                 <a class="has-arrow" href="#" aria-expanded="false">
 
                     <div class="icon_menu">
@@ -173,9 +176,9 @@
                 </ul>
 
 
-            </li>
+            </li>*@
 
-            <li class="">
+            @*<li class="">
                 <a class="has-arrow" href="#" aria-expanded="false">
 
                     <div class="icon_menu">
@@ -190,7 +193,8 @@
                 </ul>
 
 
-            </li>
+            </li>*@
+
 
             <li class="">
                 <a class="has-arrow" href="#" aria-expanded="false">
@@ -202,7 +206,7 @@
                 </a>
                 <ul>
                     <li>
-                        @Html.ActionLink("Apply Posted Job", "ApplyJobStatus", "Admin")
+                        @Html.ActionLink("Apply Posted Job", "ApplyJobStatus", "JobSeeker")
                     </li>
                 </ul>
 
@@ -213,7 +217,7 @@
 
 
 
-            <li class="">
+            @*<li class="">
                 <a class="has-arrow" href="#" aria-expanded="false">
                     <div class="icon_menu">
                         <img src="~/img/menu-icon/11.svg" alt="">
@@ -224,11 +228,11 @@
                     <li><a href="data_table.html">Data Tables</a></li>
                     <li><a href="bootstrap_table.html">Bootstrap</a></li>
                 </ul>
-            </li>
+            </li>*@
 
 
 
-            <li class="">
+            @*<li class="">
                 <a class="has-arrow" href="#" aria-expanded="false">
 
                     <div class="icon_menu">
@@ -244,7 +248,8 @@
                     <li><a href="forgot_pass.html">Forgot Password</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                 </ul>
-            </li>
+            </li>*@
+
 
         </ul>
     </nav>

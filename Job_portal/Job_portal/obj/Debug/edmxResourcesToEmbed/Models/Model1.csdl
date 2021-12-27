@@ -66,6 +66,11 @@
     <Property Name="Resume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="jobseeker_tb" Relationship="Self.FK__Education__Job_s__276EDEB3" FromRole="Education_tb" ToRole="jobseeker_tb" />
+    <Property Name="condidatename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phonenumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="Educations" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="workingexp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="inbox_tb">
     <Key>

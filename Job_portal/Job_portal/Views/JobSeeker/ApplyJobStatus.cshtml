@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "ApplyJobStatus";
+    Layout = "~/Views/Shared/_LayoutJobSeekerDashboardDesign.cshtml";
+}
+<div class="container">
+    <h2>Apply Condiadates Information</h2>
+    <br />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Job id</th>
+                <th>company id</th>
+                <th>seeker id</th>
+                <th>Date</th>
+                <th>status</th>
+                <th>Resume</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var pro in ViewBag.p)
+            {
+                <tr>
+                    <td>@pro.JobID</td>
+                    <td>@pro.Company_ID</td>
+                    <td>@pro.Job_seekerID</td>
+                    <td>@pro.EntryDate</td>
+                    @if (pro.Status == Convert.ToInt32(1).ToString())
+                    {
+                        <td style="font-weight:bolder" class="alert alert-success">APPLICATION</td>
+                    }
+
+                    <td>
+                        @Html.BeginForm("DownloadResume", "Home", FormMethod.Post)
+                        {
+
+                        <input type="hidden" value="@Session["jsid"]" name="Job_seekerID" />
+                        @*<button type="submit" class="btn btn-primary">Resume</button>*@
+                        @Html.ActionLink("Download", "DownloadResume", new { id = pro.Job_seekerID }, new { @class = "btn btn-primary" }) |
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

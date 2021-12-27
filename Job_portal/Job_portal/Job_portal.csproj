@@ -183,6 +183,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\resumestyle.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\colors\default.css" />
     <Content Include="css\metisMenu.css" />
@@ -557,6 +558,12 @@
     <Content Include="Views\Admin\ApplyJobStatus.cshtml" />
     <Content Include="Views\Home\ConfirmApplyJob.cshtml" />
     <Content Include="Views\Admin\DownloadResume.cshtml" />
+    <Content Include="Views\JobSeeker\JobSeeker.cshtml" />
+    <Content Include="Views\JobSeeker\jobseekerDetail.cshtml" />
+    <Content Include="Views\JobSeeker\EducAtionInfo.cshtml" />
+    <Content Include="Views\JobSeeker\EducationDetail.cshtml" />
+    <Content Include="Views\JobSeeker\ApplyJobStatus.cshtml" />
+    <Content Include="Views\JobSeeker\DownloadResume.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

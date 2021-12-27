@@ -13,9 +13,12 @@ namespace Job_portal.Controllers
         {
             var jobshow = db.PostJob_tb.ToList();
             var applyjobstatus = db.ApplyJob_tb.ToList();
+            var jobcat = db.job_categorytb.ToList();
+
 
             ViewBag.showjob = jobshow;
             ViewBag.applystatuscheck = applyjobstatus;
+            ViewBag.jobcatshow = jobcat;
 
             return View();
         }
@@ -32,6 +35,8 @@ namespace Job_portal.Controllers
             if (a != null)
             {
                 Session["jsid"] = a.JS_ID.ToString();
+                Session["jobseekerusername"] = a.FirstName.ToString();
+
                 return RedirectToAction("index", "JobSeeker");
             }
             else

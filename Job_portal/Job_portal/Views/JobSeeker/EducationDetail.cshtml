@@ -1,0 +1,125 @@
+﻿@model Job_portal.Models.Education_tb
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+
+<body>
+    <div>
+        <h4>Education Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CollageName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CollageName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Enrollment_Number)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Enrollment_Number)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Semester)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Semester)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Education)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Education)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Branch)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Branch)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Passyear)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Passyear)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CPI)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CPI)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CGPA)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CGPA)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Skill)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Skill)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ExtraSkill)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ExtraSkill)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Resume)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Resume)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EntryDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EntryDate)
+            </dd>
+
+
+        </dl>
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.JS_ID }) |*@
+
+        @*@Html.ActionLink("Back to List", "Index")*@
+
+    </p>
+</body>
+</html>

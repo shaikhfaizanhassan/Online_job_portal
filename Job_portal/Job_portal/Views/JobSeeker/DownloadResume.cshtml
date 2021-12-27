@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "DownloadResume";
+    Layout = "~/Views/Shared/_LayoutJobSeekerDashboardDesign.cshtml";
+}
+
+
+
+@{
+    foreach (var item in @ViewBag.p)
+    {
+
+
+        <div id="inner-nav"></div>
+        <div id="container">
+            <div id="profile">
+                <div id="image">
+                    <a href="#"><i class="fas fa-pen stroke-transparent"></i></a>
+                </div>
+                <p id="name">@item.condidatename<br><span id="email">@item.email</span></p>
+                <p id="designation">Assistant Professor<br><span id="college">@item.CollageName</span></p>
+                
+            </div>
+            <div id="info-cards">
+                <div class="card">
+                    <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work Experience</p>
+                    <a href="#">@item.workingexp</a>
+                </div>
+                
+                <div class="card">
+                    <p><i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Education</p>
+                    <ul>
+                        <li>
+                            <p class="tags">@item.Educations</p>
+                            <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    }
+} 

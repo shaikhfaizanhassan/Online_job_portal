@@ -49,6 +49,11 @@
     <EntitySetMapping Name="Education_tb">
       <EntityTypeMapping TypeName="Job_DatabaseModel.Education_tb">
         <MappingFragment StoreEntitySet="Education_tb">
+          <ScalarProperty Name="workingexp" ColumnName="workingexp" />
+          <ScalarProperty Name="Educations" ColumnName="Educations" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+          <ScalarProperty Name="condidatename" ColumnName="condidatename" />
           <ScalarProperty Name="EID" ColumnName="EID" />
           <ScalarProperty Name="Job_seeker_ID" ColumnName="Job_seeker_ID" />
           <ScalarProperty Name="CollageName" ColumnName="CollageName" />

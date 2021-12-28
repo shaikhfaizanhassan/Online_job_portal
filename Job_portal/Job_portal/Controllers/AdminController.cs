@@ -16,15 +16,41 @@ namespace Job_portal.Controllers
      
         public ActionResult Index()
         {
-            TempData["username"] = Session["adminemail"];
+            try
+            {
+                Response.Cache.SetNoStore();
+                TempData["username"] = Session["adminemail"];
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ss = ex.ToString();
+                return RedirectToAction("Login");
+            }
             return View();
         }
 
         public ActionResult Login()
         {
-            return View();
+            try
+            {
+                Response.Cache.SetNoStore();
+                if (Session["adminemail"].ToString() != null)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Login");
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.s = ex.ToString();
+                return RedirectToAction("Login");
+
+            }
         }
-        
+        [HttpPost]
         public ActionResult Loginset(admin_tb adtb)
         {
             try
@@ -33,18 +59,18 @@ namespace Job_portal.Controllers
                 if (admin_login != null)
                 {
                     Session["adminemail"] = admin_login.UserName.ToString();
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index");
                 }
                 else
                 {
                     TempData["Eror"] = "Login Failed";
-                    return RedirectToAction("Login", "Admin");
+                    return RedirectToAction("Login");
                 }
             }
             catch (Exception ex)
             {
                 ViewBag.s = ex.ToString();
-                return RedirectToAction("Login", "Admin");
+                return RedirectToAction("Login");
             }            
         }
 
@@ -119,22 +145,18 @@ namespace Job_portal.Controllers
             }
             return View();
         }
-
-
         //Education Details
         public ActionResult EducAtionInfo()
         {
             var geteduction = db.Education_tb.ToList();
             return View(geteduction);
         }
-
         //Education Detail in popup
         public ActionResult EducationDetail(int id)
         {
             var geteduction = db.Education_tb.Find(id);
             return View(geteduction);
         }
-
         public ActionResult checkPostedJob()
         {
             var get_posted_job = db.PostJob_tb.ToList();
@@ -191,7 +213,7 @@ namespace Job_portal.Controllers
             ViewBag.p = p;
             return View();
 
-        }
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 
         public ActionResult DownloadResume(int id)
         {

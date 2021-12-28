@@ -510,7 +510,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LayoutFrontDesign.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdminDesign.cshtml" />
     <Content Include="vendors\font_awesome\webfonts\fa-brands-400.eot" />
     <Content Include="vendors\font_awesome\webfonts\fa-brands-400.ttf" />
@@ -564,6 +563,7 @@
     <Content Include="Views\JobSeeker\EducationDetail.cshtml" />
     <Content Include="Views\JobSeeker\ApplyJobStatus.cshtml" />
     <Content Include="Views\JobSeeker\DownloadResume.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

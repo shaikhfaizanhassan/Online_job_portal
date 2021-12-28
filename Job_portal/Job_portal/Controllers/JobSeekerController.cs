@@ -14,7 +14,16 @@ namespace Job_portal.Controllers
         // GET: JobSeeker
         public ActionResult Index()
         {
-            ViewBag.showjobseekerusername = Session["jobseekerusername"];
+            try
+            {
+                Response.Cache.SetNoStore();
+                TempData["jobseekername"] = Session["jobseekerusername"].ToString();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ss = ex.ToString();
+                return RedirectToAction("login","Home");
+            }
             return View();
         }
 

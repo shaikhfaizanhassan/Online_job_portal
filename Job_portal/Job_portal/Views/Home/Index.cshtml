@@ -14,13 +14,14 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-xs-12 f-category">
                     <a href="@Url.Action("BrwoseJob","JobSeeker", new { id=item2.job_cat_id})">
-                        <h3>@item2.job_cat_name
-                        </h3>
-                    </a>
-                </div>
+                        <h3>
+                            @item2.job_cat_name
+                    </h3>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 }
 
 
@@ -45,23 +46,24 @@
                     <span class="full-time">Full Time</span>
                     @foreach (var checkjobstatus in ViewBag.applystatuscheck)
                     {
-                        if (Session["jsid"] == null && checkjobstatus.Status == Convert.ToInt32(1).ToString())
+                        if (Session["jsid"] != null && checkjobstatus.Status == Convert.ToInt32(1).ToString())
                         {
                             <span class="part-time" onclick="">You Have Already Apply</span>
                         }
                         else
                         {
-                            <span class="part-time" onclick="myFunction()">Apply</span>
+
                         }
-                        if (Session["jsid"] != null)
-                        {
-                            <form method="post" action="@Url.Action("apply","home")">
-                                <input type="hidden" value="@item.JobID" name="JobID" />
-                                <input type="hidden" value="@item.JobID" name="Company_ID" />
-                                <input type="hidden" value="@Session["jsid"]" name="Job_seekerID" />
-                                <button type="submit" class="btn btn-common">Apply</button>
-                            </form>
-                        }
+
+                    }
+                    @if (Session["jsid"] != null)
+                    {
+                        <form method="post" action="@Url.Action("apply","home")">
+                            <input type="hidden" value="@item.JobID" name="JobID" />
+                            <input type="hidden" value="@item.JobID" name="Company_ID" />
+                            <input type="hidden" value="@Session["jsid"]" name="Job_seekerID" />
+                            <button type="submit" class="btn btn-common">Apply</button>
+                        </form>
                     }
 
                 </div>

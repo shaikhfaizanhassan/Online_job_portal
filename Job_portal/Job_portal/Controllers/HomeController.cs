@@ -11,6 +11,9 @@ namespace Job_portal.Controllers
         Job_DatabaseEntities db = new Job_DatabaseEntities();
         public ActionResult Index()
         {
+
+            
+
             var jobshow = db.PostJob_tb.ToList();
             var applyjobstatus = db.ApplyJob_tb.ToList();
             var jobcat = db.job_categorytb.ToList();
@@ -18,32 +21,55 @@ namespace Job_portal.Controllers
 
             ViewBag.showjob = jobshow;
             ViewBag.applystatuscheck = applyjobstatus;
+
             ViewBag.jobcatshow = jobcat;
 
             return View();
         }
         public ActionResult login()
         {
-
-            return View();
+            try
+            {
+                Response.Cache.SetNoStore();
+                if (Session["jsid"].ToString() != null)
+                {
+                    return RedirectToAction("Index", "JobSeeker");
+                }
+                else
+                {
+                    return RedirectToAction("login", "Home");
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.s = ex.ToString();
+                return View();
+            }
         }
         [HttpPost]
         public ActionResult login(jobseeker_tb usr)
         {
-
-            var a = db.jobseeker_tb.Where(l => l.UserName == usr.UserName && l.Password == usr.Password).FirstOrDefault();
-            if (a != null)
+            try
             {
-                Session["jsid"] = a.JS_ID.ToString();
-                Session["jobseekerusername"] = a.FirstName.ToString();
+                var a = db.jobseeker_tb.Where(l => l.UserName == usr.UserName && l.Password == usr.Password).FirstOrDefault();
+                if (a != null)
+                {
+                    Session["jsid"] = a.JS_ID.ToString();
+                    Session["jobseekerusername"] = a.FirstName.ToString();
 
-                return RedirectToAction("index", "JobSeeker");
+                    return RedirectToAction("index", "JobSeeker");
+                }
+                else
+                {
+                    ViewBag.msg = "Invalid User Name or Password";
+                    return RedirectToAction("login", "Home");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ViewBag.msg = "Invalid User Name or Password";
+                ViewBag.s = ex.ToString();
+                return RedirectToAction("login", "Home");
             }
-            return View();
         }
         public ActionResult logout()
         {

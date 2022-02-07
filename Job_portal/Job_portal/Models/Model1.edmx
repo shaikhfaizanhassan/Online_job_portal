@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Job_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Job_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="admin_tb">
           <Key>
             <PropertyRef Name="Admin_ID" />
@@ -141,7 +141,7 @@
           <Property Name="JobStatus" Type="int" />
           <Property Name="applied" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__ApplyJob___Compa__35BCFE0A">
+        <Association Name="FK__ApplyJob___Compa__59FA5E80">
           <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
           <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -153,7 +153,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ApplyJob___Job_s__36B12243">
+        <Association Name="FK__ApplyJob___Job_s__5AEE82B9">
           <End Role="jobseeker_tb" Type="Self.jobseeker_tb" Multiplicity="0..1" />
           <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -165,7 +165,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ApplyJob___JobID__34C8D9D1">
+        <Association Name="FK__ApplyJob___JobID__59063A47">
           <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="0..1" />
           <End Role="ApplyJob_tb" Type="Self.ApplyJob_tb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -177,7 +177,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Education__Job_s__276EDEB3">
+        <Association Name="FK__Education__Job_s__5BE2A6F2">
           <End Role="jobseeker_tb" Type="Self.jobseeker_tb" Multiplicity="0..1" />
           <End Role="Education_tb" Type="Self.Education_tb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -189,7 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PostJob_t__Compa__300424B4">
+        <Association Name="FK__PostJob_t__Compa__5CD6CB2B">
           <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
           <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -201,7 +201,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PostJob_t__job_c__30F848ED">
+        <Association Name="FK__PostJob_t__job_c__5DCAEF64">
           <End Role="job_categorytb" Type="Self.job_categorytb" Multiplicity="0..1" />
           <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -213,7 +213,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PostJob_t__Job_l__31EC6D26">
+        <Association Name="FK__PostJob_t__Job_l__5EBF139D">
           <End Role="Job_location" Type="Self.Job_location" Multiplicity="0..1" />
           <End Role="PostJob_tb" Type="Self.PostJob_tb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -235,31 +235,31 @@
           <EntitySet Name="Job_location" EntityType="Self.Job_location" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="jobseeker_tb" EntityType="Self.jobseeker_tb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PostJob_tb" EntityType="Self.PostJob_tb" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__ApplyJob___Compa__35BCFE0A" Association="Self.FK__ApplyJob___Compa__35BCFE0A">
+          <AssociationSet Name="FK__ApplyJob___Compa__59FA5E80" Association="Self.FK__ApplyJob___Compa__59FA5E80">
             <End Role="Company_tb" EntitySet="Company_tb" />
             <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
           </AssociationSet>
-          <AssociationSet Name="FK__ApplyJob___Job_s__36B12243" Association="Self.FK__ApplyJob___Job_s__36B12243">
+          <AssociationSet Name="FK__ApplyJob___Job_s__5AEE82B9" Association="Self.FK__ApplyJob___Job_s__5AEE82B9">
             <End Role="jobseeker_tb" EntitySet="jobseeker_tb" />
             <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
           </AssociationSet>
-          <AssociationSet Name="FK__ApplyJob___JobID__34C8D9D1" Association="Self.FK__ApplyJob___JobID__34C8D9D1">
+          <AssociationSet Name="FK__ApplyJob___JobID__59063A47" Association="Self.FK__ApplyJob___JobID__59063A47">
             <End Role="PostJob_tb" EntitySet="PostJob_tb" />
             <End Role="ApplyJob_tb" EntitySet="ApplyJob_tb" />
           </AssociationSet>
-          <AssociationSet Name="FK__Education__Job_s__276EDEB3" Association="Self.FK__Education__Job_s__276EDEB3">
+          <AssociationSet Name="FK__Education__Job_s__5BE2A6F2" Association="Self.FK__Education__Job_s__5BE2A6F2">
             <End Role="jobseeker_tb" EntitySet="jobseeker_tb" />
             <End Role="Education_tb" EntitySet="Education_tb" />
           </AssociationSet>
-          <AssociationSet Name="FK__PostJob_t__Compa__300424B4" Association="Self.FK__PostJob_t__Compa__300424B4">
+          <AssociationSet Name="FK__PostJob_t__Compa__5CD6CB2B" Association="Self.FK__PostJob_t__Compa__5CD6CB2B">
             <End Role="Company_tb" EntitySet="Company_tb" />
             <End Role="PostJob_tb" EntitySet="PostJob_tb" />
           </AssociationSet>
-          <AssociationSet Name="FK__PostJob_t__job_c__30F848ED" Association="Self.FK__PostJob_t__job_c__30F848ED">
+          <AssociationSet Name="FK__PostJob_t__job_c__5DCAEF64" Association="Self.FK__PostJob_t__job_c__5DCAEF64">
             <End Role="job_categorytb" EntitySet="job_categorytb" />
             <End Role="PostJob_tb" EntitySet="PostJob_tb" />
           </AssociationSet>
-          <AssociationSet Name="FK__PostJob_t__Job_l__31EC6D26" Association="Self.FK__PostJob_t__Job_l__31EC6D26">
+          <AssociationSet Name="FK__PostJob_t__Job_l__5EBF139D" Association="Self.FK__PostJob_t__Job_l__5EBF139D">
             <End Role="Job_location" EntitySet="Job_location" />
             <End Role="PostJob_tb" EntitySet="PostJob_tb" />
           </AssociationSet>
@@ -708,7 +708,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

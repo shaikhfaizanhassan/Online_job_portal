@@ -11,9 +11,6 @@ namespace Job_portal.Controllers
         Job_DatabaseEntities db = new Job_DatabaseEntities();
         public ActionResult Index()
         {
-
-            
-
             var jobshow = db.PostJob_tb.ToList();
             var applyjobstatus = db.ApplyJob_tb.ToList();
             var jobcat = db.job_categorytb.ToList();
@@ -51,10 +48,11 @@ namespace Job_portal.Controllers
         {
             try
             {
-                var a = db.jobseeker_tb.Where(l => l.UserName == usr.UserName && l.Password == usr.Password).FirstOrDefault();
+                var a = db.jobseeker_tb.Where(l => l.UserName == usr.UserName && l.Password == usr.Password).SingleOrDefault();
                 if (a != null)
                 {
                     Session["jsid"] = a.JS_ID.ToString();
+                    ViewBag.jstatus = "not applied";
                     Session["jobseekerusername"] = a.FirstName.ToString();
 
                     return RedirectToAction("index", "JobSeeker");
@@ -90,6 +88,7 @@ namespace Job_portal.Controllers
             obj.Company_ID = ap.Company_ID;
             obj.Status = Convert.ToInt32(a).ToString();
             obj.EntryDate = DateTime.Now;
+            
             db.ApplyJob_tb.Add(obj);
             db.SaveChanges();
             return RedirectToAction("ConfirmApplyJob");
@@ -129,7 +128,7 @@ namespace Job_portal.Controllers
         //    var d = db.Education_tb.Where(x => x.Job_seeker_ID == josid).FirstOrDefault();
         //    return View(d);
         //}
-
+        //Today 7 feb 2021
 
     }
 }

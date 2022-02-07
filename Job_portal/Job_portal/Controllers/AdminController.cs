@@ -12,8 +12,6 @@ namespace Job_portal.Controllers
         Job_DatabaseEntities db = new Job_DatabaseEntities();
 
         // GET: Admin
-
-     
         public ActionResult Index()
         {
             try

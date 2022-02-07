@@ -125,6 +125,7 @@
     <EntitySetMapping Name="PostJob_tb">
       <EntityTypeMapping TypeName="Job_DatabaseModel.PostJob_tb">
         <MappingFragment StoreEntitySet="PostJob_tb">
+          <ScalarProperty Name="applied" ColumnName="applied" />
           <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
           <ScalarProperty Name="Contact_person" ColumnName="Contact_person" />

@@ -46,15 +46,14 @@
                     <span class="full-time">Full Time</span>
                     @foreach (var checkjobstatus in ViewBag.applystatuscheck)
                     {
-                        if (Session["jsid"] != null && checkjobstatus.Status == Convert.ToInt32(1).ToString())
+                        if (Session["jsid"] != null && ViewBag.jstatus!=null ) //checkjobstatus.Status == Convert.ToInt32(1).ToString())
                         {
                             <span class="part-time" onclick="">You Have Already Apply</span>
                         }
                         else
                         {
-
+                            <span class="part-time" onclick="myFunction()">Apply</span>
                         }
-
                     }
                     @if (Session["jsid"] != null)
                     {
@@ -69,11 +68,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
         <div class="col-12 text-center mt-4">
             <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
 

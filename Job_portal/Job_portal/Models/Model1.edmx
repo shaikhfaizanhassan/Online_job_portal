@@ -139,6 +139,7 @@
           <Property Name="Contact_person" Type="varchar" MaxLength="50" />
           <Property Name="CompanyName" Type="varchar" MaxLength="50" />
           <Property Name="JobStatus" Type="int" />
+          <Property Name="applied" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__ApplyJob___Compa__35BCFE0A">
           <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
@@ -415,6 +416,7 @@
           <Property Name="Contact_person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="JobStatus" Type="Int32" />
+          <Property Name="applied" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__ApplyJob___Compa__35BCFE0A">
           <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
@@ -669,6 +671,7 @@
           <EntitySetMapping Name="PostJob_tb">
             <EntityTypeMapping TypeName="Job_DatabaseModel.PostJob_tb">
               <MappingFragment StoreEntitySet="PostJob_tb">
+                <ScalarProperty Name="applied" ColumnName="applied" />
                 <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
                 <ScalarProperty Name="Contact_person" ColumnName="Contact_person" />

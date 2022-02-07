@@ -36,6 +36,7 @@ namespace Job_portal.Models
         public string Contact_person { get; set; }
         public string CompanyName { get; set; }
         public Nullable<int> JobStatus { get; set; }
+        public string applied { get; set; }
     
         public virtual ICollection<ApplyJob_tb> ApplyJob_tb { get; set; }
         public virtual Company_tb Company_tb { get; set; }

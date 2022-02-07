@@ -148,6 +148,7 @@
     <Property Name="Contact_person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="JobStatus" Type="Int32" />
+    <Property Name="applied" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK__ApplyJob___Compa__35BCFE0A">
     <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />

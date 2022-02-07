@@ -233,4 +233,4 @@ F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.csproj.CoreCompi
 F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.csproj.CopyComplete
 F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.dll
 F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.pdb
-F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.csprojAssemblyReference.cache
+F:\Online_job_portal\Job_portal\Job_portal\obj\Debug\Job_portal.csproj.AssemblyReference.cache

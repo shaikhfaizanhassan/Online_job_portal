@@ -134,6 +134,7 @@
     <Property Name="Contact_person" Type="varchar" MaxLength="50" />
     <Property Name="CompanyName" Type="varchar" MaxLength="50" />
     <Property Name="JobStatus" Type="int" />
+    <Property Name="applied" Type="varchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK__ApplyJob___Compa__35BCFE0A">
     <End Role="Company_tb" Type="Self.Company_tb" Multiplicity="0..1" />
